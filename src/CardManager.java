@@ -1,16 +1,15 @@
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class CardManager {
-    public static void main(String[] args) throws FileNotFoundException {
-        System.out.print(parse());
-    }
-    private static List<String> parse() throws FileNotFoundException {
-        List<String> result = FileReader.getLines();
-        for(int i = 0; i < result.size(); i++){
-            result.set(i, result.get(i).replaceFirst("[0-9]* ", ""));
+    public static void main(String[] args) throws Exception {
+        List<String> data = parse(FileReader.getLines("C:\\Users\\golde\\IdeaProjects\\MTGSpot\\src\\data.txt"));
+        for (int i=0; i<data.size(); i++){
+            RequestManager.fetch(data.get(i));
         }
+    }
+    private static List<String> parse(List<String> result) {
+        result.replaceAll(s -> s.replaceFirst("[0-9]* ", ""));
         return result;
     }
 }

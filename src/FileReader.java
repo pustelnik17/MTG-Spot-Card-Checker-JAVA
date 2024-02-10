@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FileReader {
-    public static List<String> getLines() throws FileNotFoundException {
+    public static List<String> getLines(String path) throws FileNotFoundException {
         List<String> result = new ArrayList<>();
-        File file = new File("C:\\Users\\golde\\IdeaProjects\\MTGSpot\\src\\data.txt");
+        File file = new File(path);
         Scanner scan = new Scanner(file);
 
         while(scan.hasNextLine()){
