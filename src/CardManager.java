@@ -4,8 +4,8 @@ import java.util.List;
 public class CardManager {
     public static void main(String[] args) throws Exception {
         List<String> data = parse(FileReader.getLines("C:\\Users\\golde\\IdeaProjects\\MTGSpot\\src\\data.txt"));
-        for (int i=0; i<data.size(); i++){
-            RequestManager.fetch(data.get(i));
+        for (String datum : data) {
+            RequestManager.fetch(datum);
         }
     }
     private static List<String> parse(List<String> result) {
