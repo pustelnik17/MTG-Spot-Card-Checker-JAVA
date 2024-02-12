@@ -6,7 +6,7 @@ import java.util.List;
 
 public class CardManager {
     public static void main(String[] args) throws Exception {
-        List<String> data = parseInputString(FileReader.getLines("C:\\Users\\golde\\IdeaProjects\\MTGSpot\\src\\data.txt"));
+        List<String> data = parseInputString(FileReader.getLines("C:\\Users\\golde\\IdeaProjects\\MTGSpot\\src\\Resources\\data.txt"));
         List<List<String>> response = new ArrayList<>();
         RequestManager.fetch(data, new ResponseCallBack() {
             @Override
