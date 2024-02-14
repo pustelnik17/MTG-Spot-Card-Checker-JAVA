@@ -7,10 +7,10 @@ import java.util.List;
 public class CardManager {
     public static void main(String[] args) throws Exception {
         List<String> data = parseInputString(FileReader.getLines("C:\\Users\\golde\\IdeaProjects\\MTGSpot\\src\\Resources\\data.txt"));
-        List<List<String>> response = new ArrayList<>();
+        List<List<Float>> response = new ArrayList<>();
         RequestManager.fetch(data, new ResponseCallBack() {
             @Override
-            public void onResponse(List<String> list) {
+            public void onResponse(List<Float> list) {
                 response.add(list);
             }
 
@@ -19,7 +19,7 @@ public class CardManager {
                 System.out.println("FETCH ERROR");
             }
         });
-        for (List<String> item : response)
+        for (List<Float> item : response)
             System.out.println(item);
     }
 
